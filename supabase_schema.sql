@@ -190,6 +190,9 @@ ON profiles FOR ALL USING (tenant_id = get_my_tenant() AND get_my_role() = 'scho
 CREATE POLICY "Users can see profiles in their tenant"
 ON profiles FOR SELECT USING (tenant_id = get_my_tenant());
 
+CREATE POLICY "Users can view their own profile"
+ON profiles FOR SELECT USING (id = auth.uid());
+
 -- 3. ATTENDANCE POLICIES
 CREATE POLICY "Teachers can manage attendance for their tenant"
 ON attendance FOR ALL USING (tenant_id = get_my_tenant() AND get_my_role() = 'teacher');
