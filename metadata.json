@@ -1,0 +1,5 @@
+{
+  "name": "EduFlow SaaS",
+  "description": "A production-ready multi-tenant School Management System with role-based access control, attendance tracking, and grading modules.",
+  "requestFramePermissions": []
+}
